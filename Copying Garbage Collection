@@ -1,2 +1,8 @@
 Copying Garbage Collection
-At an abstract level, all a copying collector does is start from a set of roots (in our case, the operand stack), and traverse all of the reachable memory-allocated objects, copying them from one half of memory into the other half. The area of memory that we copy from is called old space and the area of memory that we copy to is called new space. When we copy the reachable data, we compact it so that it is in a contiguous chunk. So, in effect, we squeeze out the holes in memory that the garbage data occupied. After the copy and compaction, we end up with a compacted copy of the data in new space data and a (hopefully) large, contiguous area of memory in new space in which we can quickly and easily allocate new objects. The next time we do garbage collection, the roles of old space and new space will be reversed.
+At an abstract level, all a copying collector does is start from a set of roots (in our case, the operand stack), and 
+traverse all of the reachable memory-allocated objects, copying them from one half of memory into the other half.
+The area of memory that we copy from is called old space and the area of memory that we copy to is called new space.
+When we copy the reachable data, we compact it so that it is in a contiguous chunk. So, in effect, we squeeze out the holes 
+in memory that the garbage data occupied. After the copy and compaction, we end up with a compacted copy of the data in new 
+space data and a (hopefully) large, contiguous area of memory in new space in which we can quickly and easily allocate new 
+objects. The next time we do garbage collection, the roles of old space and new space will be reversed.
